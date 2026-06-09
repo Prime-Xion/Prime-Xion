@@ -1,18 +1,10 @@
-/* ضبط عام للجسم لمنع أي تمدد أفقي */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden;
+body {
   background-color: #000000;
   color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
   direction: rtl;
-}
-
-/* استخدام box-sizing لجميع العناصر لمنع الـ padding من زيادة العرض */
-* {
-  box-sizing: border-box;
 }
 
 .main-wrapper {
@@ -21,44 +13,51 @@ html, body {
   align-items: center;
   width: 100%;
   min-height: 100vh;
-  padding: 0 15px; /* مسافة أمان من الجوانب */
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   max-width: 1000px;
   padding: 20px 0;
   border-bottom: 1px solid #333;
 }
 
-.nav-links { display: flex; list-style: none; gap: 15px; margin: 0; padding: 0; }
-.nav-item { cursor: pointer; padding: 5px 10px; }
+.nav-links { display: flex; list-style: none; gap: 30px; margin: 0; }
+.nav-item { cursor: pointer; padding: 5px 10px; transition: 0.3s; border-radius: 5px; }
+.nav-item:hover { background-color: #1a1a1a; }
+.logo { margin: 0; font-size: 1.8rem; font-weight: bold; }
 
-.content { text-align: center; width: 100%; max-width: 1000px; margin-top: 30px; }
+.back-container { width: 90%; max-width: 1000px; text-align: right; margin-top: 20px; }
+.back-btn { background: #333; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 1rem; }
+.back-btn:hover { background: #444; }
 
-/* الجزء الأهم: الشبكة المرنة */
-.card-grid { 
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-  gap: 20px; 
-  width: 100%;
-  margin-bottom: 50px;
+.content { text-align: center; width: 90%; max-width: 1000px; margin-top: 30px; flex: 1; }
+.welcome-text { margin-bottom: 30px; font-size: 1.6rem; }
+
+.card-full { background-color: #0a0a0a; border: 1px solid #333; border-radius: 15px; padding: 30px; margin-bottom: 30px; cursor: pointer; transition: 0.3s; }
+.card-full:hover { border-color: #ffffff; }
+.card-full h3 { font-size: 2rem; margin-bottom: 10px; }
+.card-full p { font-size: 1.1rem; }
+
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 50px; }
+.card { background-color: #0a0a0a; border: 1px solid #333; border-radius: 15px; padding: 25px; transition: 0.3s; cursor: pointer; }
+.card:hover { border-color: #ffffff; box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
+.card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.card p { font-size: 1rem; color: #ccc; margin-bottom: 15px; }
+.card img { margin-bottom: 10px; border-radius: 5px; }
+
+.download-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #ffffff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
-.card { 
-  background-color: #0a0a0a; 
-  border: 1px solid #333; 
-  border-radius: 15px; 
-  padding: 20px;
-  width: 100%; /* تأخذ كامل مساحة عمود الشبكة */
-}
-
-/* تنسيق خاص للجوال */
-@media (max-width: 600px) {
-  .nav-links { gap: 10px; font-size: 0.9rem; }
-  .logo { font-size: 1.4rem; }
-  .card-grid { grid-template-columns: 1fr; } /* عمود واحد إجباري */
-}
+.footer { width: 100%; text-align: center; padding: 20px; border-top: 1px solid #333; color: #666; font-size: 0.9rem; }
