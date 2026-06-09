@@ -11,9 +11,9 @@ function App() {
       case 'PING':
         return version === 1 ? "/ffs%20v4.2.json" : "/ffs%20v3.json";
       case 'Prime Xion':
-        return version === 1 ? "/specflag'%20(4).json" : "/FFlags%20Fps%20Boost%20+%20Ping.json"; 
+        return version === 1 ? "/specflag.json" : "/FFlags%20Fps%20Boost%20+%20Ping.json"; 
       case 'Extreme':
-        return version === 1 ? "/Crrusher.json" : "/ryuk%20(1).json";
+        return version === 1 ? "/Crrusher.json" : "/ryuk.json";
       default:
         return "#";
     }
@@ -24,8 +24,6 @@ function App() {
       <nav className="navbar">
         <ul className="nav-links">
           <li className="nav-item" onClick={() => setView('home')}>الرئيسية</li>
-          <li className="nav-item">الأدوات</li>
-          <li className="nav-item">تحسين الألعاب</li>
         </ul>
         <h1 className="logo">Prime Xion</h1>
       </nav>
@@ -40,7 +38,6 @@ function App() {
         {view === 'home' ? (
           <>
             <h2 className="welcome-text">مرحباً بك في منصة Prime Xion</h2>
-            {/* التعديل هنا: إضافة العنوان والوصف */}
             <div className="card-full" onClick={() => setView('ROBLOX')}>
               <h3>تطبيقات Roblox</h3>
               <p>استكشف أفضل الأدوات لتحسين تجربة اللعب في روبلوكس</p>
@@ -55,12 +52,10 @@ function App() {
         ) : view === 'ROBLOX' ? (
           <div className="card-grid">
             <div className="card">
-              <img src="/Bloxstrap.webp" alt="Bloxstrap" width="60" />
               <h3>Bloxstrap</h3>
               <a href="https://bloxstraplabs.com" target="_blank" rel="noreferrer" className="download-btn">للتحميل</a>
             </div>
             <div className="card">
-              <img src="/Fishstrap.webp" alt="Fishstrap" width="60" />
               <h3>Fishstrap</h3>
               <a href="https://www.fishstrap.app" target="_blank" rel="noreferrer" className="download-btn">للتحميل</a>
             </div>
@@ -70,12 +65,12 @@ function App() {
             <h2 className="welcome-text">إعدادات {view}</h2>
             <div className="card-grid">
               <div className="card">
-                <h3>FastFlag - {view} 1</h3>
-                <a href={getDownloadLink(view, 1)} download className="download-btn">تحميل ملف 1</a>
+                <h3>{view} - ملف 1</h3>
+                <a href={getDownloadLink(view, 1)} download className="download-btn">تحميل</a>
               </div>
               <div className="card">
-                <h3>FastFlag - {view} 2</h3>
-                <a href={getDownloadLink(view, 2)} download className="download-btn">تحميل ملف 2</a>
+                <h3>{view} - ملف 2</h3>
+                <a href={getDownloadLink(view, 2)} download className="download-btn">تحميل</a>
               </div>
             </div>
           </>
