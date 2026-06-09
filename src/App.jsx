@@ -11,7 +11,7 @@ function App() {
       case 'PING':
         return version === 1 ? "/ffs%20v4.2.json" : "/ffs%20v3.json";
       case 'Prime Xion':
-        return version === 1 ? "/specflag.json" : "/FFlags%20Fps%20Boost%20+%20Ping.json"; 
+        return version === 1 ? "/specflag.json" : "/FFlags.json"; 
       case 'Extreme':
         return version === 1 ? "/Crrusher.json" : "/ryuk.json";
       default:
@@ -22,10 +22,10 @@ function App() {
   return (
     <div className="main-wrapper">
       <nav className="navbar">
+        <h1 className="logo" onClick={() => setView('home')} style={{cursor: 'pointer'}}>Prime Xion</h1>
         <ul className="nav-links">
           <li className="nav-item" onClick={() => setView('home')}>الرئيسية</li>
         </ul>
-        <h1 className="logo">Prime Xion</h1>
       </nav>
 
       {view !== 'home' && (
@@ -40,7 +40,7 @@ function App() {
             <h2 className="welcome-text">مرحباً بك في منصة Prime Xion</h2>
             <div className="card-full" onClick={() => setView('ROBLOX')}>
               <h3>تطبيقات Roblox</h3>
-              <p>استكشف أفضل الأدوات لتحسين تجربة اللعب في روبلوكس</p>
+              <p>استكشف أفضل الأدوات لتحسين تجربة اللعب</p>
             </div>
             <div className="card-grid">
               <div className="card" onClick={() => setView('FPS')}><h3>FastFlag - زيادة FPS</h3></div>
